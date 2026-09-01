@@ -41,9 +41,7 @@ models/*.pkl
 models/*.json
 !models/.gitkeep
 
-# ---- Artifacts / plots / reports (regenerated) ----
-artifacts/plots/*
-artifacts/plots/.gitkeep
+# ---- Artifacts / explanations (regenerated) ----
 artifacts/explanations/*
 artifacts/explanations/.gitkeep
 mlruns/
