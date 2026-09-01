@@ -1,0 +1,35 @@
+name: Docker Build
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies and train model
+        run: |
+          pip install -r requirements.txt
+          python scripts/download_data.py
+          python scripts/prepare_data.py
+          python scripts/train.py
+          python scripts/evaluate.py
+
+      - name: Build backend image
+        run: docker build -t loan-recovery-backend:latest -f backend/Dockerfile .
+
+      - name: Build frontend image
+        run: docker build -t loan-recovery-frontend:latest -f frontend/Dockerfile ./frontend
+
+      - name: Validate docker-compose
+        run: docker compose config

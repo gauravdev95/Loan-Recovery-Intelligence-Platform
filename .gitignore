@@ -1,0 +1,72 @@
+# ---- Secrets / environment ----
+.env
+.env.local
+*.pem
+*.key
+
+# ---- Dataset (license terms do not permit redistribution) ----
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# ---- Kaggle credentials ----
+.kaggle/
+credentials.json
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.coverage.*
+
+# ---- Model artifacts (large binaries, regenerated) ----
+models/*.joblib
+models/*.pkl
+models/*.json
+!models/.gitkeep
+
+# ---- Artifacts / plots / reports (regenerated) ----
+artifacts/plots/*
+artifacts/plots/.gitkeep
+artifacts/explanations/*
+artifacts/explanations/.gitkeep
+mlruns/
+mlartifacts/
+
+# ---- MLflow / Optuna ----
+mlruns/
+optuna_*.db
+
+# ---- Node / frontend ----
+node_modules/
+frontend/dist/
+frontend/.vite/
+npm-debug.log*
+yarn-error.log*
+
+# ---- OS / editors ----
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# ---- Local DB artifacts / caches ----
+*.db
+*.sqlite3

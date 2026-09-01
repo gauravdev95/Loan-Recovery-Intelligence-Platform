@@ -1,0 +1,28 @@
+{
+  "model_name": "XGBoost [final]",
+  "model_version": "1.0.0",
+  "test_metrics": {
+    "accuracy": 0.9165067606765139,
+    "precision": 0.39767054908485855,
+    "recall": 0.4773635153129161,
+    "f1": 0.43388804841149775,
+    "roc_auc": 0.8649084745792938,
+    "pr_auc": 0.39414657681972687,
+    "threshold": 0.7142211055276382,
+    "confusion_matrix": {
+      "tn": 19821,
+      "fp": 1086,
+      "fn": 785,
+      "tp": 717
+    },
+    "true_positive_rate": 0.4773635153129161,
+    "false_positive_rate": 0.05194432486726933,
+    "n_samples": 22409
+  },
+  "threshold": 0.7142211055276382,
+  "risk_thresholds": [
+    0.2,
+    0.55,
+    0.9
+  ]
+}

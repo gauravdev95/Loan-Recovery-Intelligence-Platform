@@ -1,0 +1,56 @@
+{
+  "threshold": 0.7142211055276382,
+  "n_samples": 22409,
+  "counts": {
+    "true_positive": 717,
+    "true_negative": 19821,
+    "false_positive": 1086,
+    "false_negative": 785
+  },
+  "confidence_analysis": {
+    "high_confidence_false_positive": 668,
+    "high_confidence_false_negative": 155,
+    "low_confidence_predictions": 3822
+  },
+  "error_groups": {
+    "missed_defaulters_false_negatives": {
+      "size": 785,
+      "top_mean_features": {
+        "MonthlyIncome": 6115.3085,
+        "income_per_dependent": 3551.1902,
+        "DebtRatio": 395.9448,
+        "age": 47.1541,
+        "NumberOfOpenCreditLinesAndLoans": 9.2803,
+        "NumberRealEstateLoansOrLines": 1.1643,
+        "NumberOfDependents": 0.8941,
+        "has_income_flag": 0.8573
+      }
+    },
+    "false_alarms_false_positives": {
+      "size": 1086,
+      "top_mean_features": {
+        "MonthlyIncome": 5135.7778,
+        "income_per_dependent": 2628.3712,
+        "DebtRatio": 265.5016,
+        "age": 44.8343,
+        "delinquency_weighted_index": 12.8444,
+        "NumberOfOpenCreditLinesAndLoans": 6.8444,
+        "total_delinquencies": 6.6575,
+        "NumberOfTime30-59DaysPastDueNotWorse": 2.6427
+      }
+    },
+    "correct_defaulters_true_positives": {
+      "size": 717,
+      "top_mean_features": {
+        "MonthlyIncome": 4631.7326,
+        "income_per_dependent": 2244.1928,
+        "DebtRatio": 362.5378,
+        "age": 44.2999,
+        "delinquency_weighted_index": 24.0739,
+        "total_delinquencies": 12.1729,
+        "NumberOfOpenCreditLinesAndLoans": 6.9163,
+        "NumberOfTime30-59DaysPastDueNotWorse": 4.4114
+      }
+    }
+  }
+}

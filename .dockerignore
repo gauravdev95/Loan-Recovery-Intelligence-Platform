@@ -1,0 +1,14 @@
+node_modules
+__pycache__
+*.pyc
+.git
+.github
+*.egg-info
+dist
+build
+.env
+*.db
+data/raw
+data/processed
+.pytest_cache
+.claude

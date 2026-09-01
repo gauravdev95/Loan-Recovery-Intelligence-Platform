@@ -1,0 +1,44 @@
+# Loan Recovery Intelligence Platform — Python dependencies
+# All versions verified working together on Python 3.12 / 3.14 (CPU-only).
+
+# ---- Core data & ML stack ----
+numpy==2.3.5
+pandas==2.3.3
+scipy==1.16.3
+scikit-learn==1.7.2
+joblib==1.5.2
+
+# ---- Gradient boosting ----
+xgboost==3.4.1
+lightgbm==4.7.0
+
+# ---- Explainability ----
+shap==0.52.0
+
+# ---- Class imbalance handling (>=0.14 needed for scikit-learn 1.7) ----
+imbalanced-learn==0.14.2
+
+# ---- Visualization ----
+matplotlib==3.10.8
+seaborn==0.13.2
+
+# ---- Backend ----
+fastapi==0.136.1
+uvicorn[standard]==0.47.0
+pydantic==2.12.5
+pydantic-settings==2.14.1
+SQLAlchemy==2.0.51
+psycopg2-binary==2.9.12
+alembic==1.19.1
+python-multipart==0.0.22
+httpx==0.28.1
+
+# ---- Dataset acquisition ----
+kaggle==2.2.4
+
+# ---- Hyperparameter tuning & experiment tracking ----
+optuna==4.9.0
+
+# ---- Testing / dev ----
+pytest==9.1.1
+pytest-cov==7.1.0
