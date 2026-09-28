@@ -37,21 +37,21 @@
       "n_samples": 22408
     },
     "XGBoost": {
-      "accuracy": 0.920742591931453,
-      "precision": 0.42296918767507,
-      "recall": 0.502998001332445,
-      "f1": 0.45952525867315885,
-      "roc_auc": 0.863434740195046,
-      "pr_auc": 0.41484955966196907,
-      "threshold": 0.7142211055276382,
+      "accuracy": 0.9227061763655837,
+      "precision": 0.43161634103019536,
+      "recall": 0.48567621585609594,
+      "f1": 0.4570532915360502,
+      "roc_auc": 0.8641359037853211,
+      "pr_auc": 0.41460779701739786,
+      "threshold": 0.7289949748743719,
       "confusion_matrix": {
-        "tn": 19877,
-        "fp": 1030,
-        "fn": 746,
-        "tp": 755
+        "tn": 19947,
+        "fp": 960,
+        "fn": 772,
+        "tp": 729
       },
-      "true_positive_rate": 0.502998001332445,
-      "false_positive_rate": 0.049265796144831876,
+      "true_positive_rate": 0.48567621585609594,
+      "false_positive_rate": 0.04591763524178505,
       "n_samples": 22408
     },
     "LightGBM": {
@@ -92,40 +92,40 @@
     }
   },
   "smote": {
-    "accuracy": 0.9151642270617637,
-    "precision": 0.39868287740628167,
-    "recall": 0.5243171219187208,
-    "f1": 0.4529496402877698,
-    "roc_auc": 0.8611340625995514,
-    "pr_auc": 0.3974651902420511,
-    "threshold": 0.7289949748743719,
+    "accuracy": 0.9173063191717243,
+    "precision": 0.40638297872340423,
+    "recall": 0.5089940039973351,
+    "f1": 0.45193729665779353,
+    "roc_auc": 0.86059700892315,
+    "pr_auc": 0.39884416078709495,
+    "threshold": 0.7437688442211056,
     "confusion_matrix": {
-      "tn": 19720,
-      "fp": 1187,
-      "fn": 714,
-      "tp": 787
+      "tn": 19791,
+      "fp": 1116,
+      "fn": 737,
+      "tp": 764
     },
-    "true_positive_rate": 0.5243171219187208,
-    "false_positive_rate": 0.05677524274166547,
+    "true_positive_rate": 0.5089940039973351,
+    "false_positive_rate": 0.05337925096857512,
     "n_samples": 22408
   },
   "tuned": {
     "XGBoost": {
-      "accuracy": 0.9145394501963584,
-      "precision": 0.3977272727272727,
-      "recall": 0.536309127248501,
-      "f1": 0.45673758865248226,
-      "roc_auc": 0.8656970192572945,
-      "pr_auc": 0.4173379253849997,
-      "threshold": 0.7486934673366834,
+      "accuracy": 0.9152981078186362,
+      "precision": 0.4005012531328321,
+      "recall": 0.5323117921385743,
+      "f1": 0.4570938215102975,
+      "roc_auc": 0.8659094061652494,
+      "pr_auc": 0.41701648578636613,
+      "threshold": 0.7536180904522614,
       "confusion_matrix": {
-        "tn": 19688,
-        "fp": 1219,
-        "fn": 696,
-        "tp": 805
+        "tn": 19711,
+        "fp": 1196,
+        "fn": 702,
+        "tp": 799
       },
-      "true_positive_rate": 0.536309127248501,
-      "false_positive_rate": 0.058305830583058306,
+      "true_positive_rate": 0.5323117921385743,
+      "false_positive_rate": 0.05720572057205721,
       "n_samples": 22408
     },
     "LightGBM": {
@@ -147,41 +147,41 @@
       "n_samples": 22408
     }
   },
-  "final_candidate": "untuned[XGBoost]",
+  "final_candidate": "tuned[XGBoost]",
   "final_validation": {
-    "accuracy": 0.920742591931453,
-    "precision": 0.42296918767507,
-    "recall": 0.502998001332445,
-    "f1": 0.45952525867315885,
-    "roc_auc": 0.863434740195046,
-    "pr_auc": 0.41484955966196907,
-    "threshold": 0.7142211055276382,
+    "accuracy": 0.9152981078186362,
+    "precision": 0.4005012531328321,
+    "recall": 0.5323117921385743,
+    "f1": 0.4570938215102975,
+    "roc_auc": 0.8659094061652494,
+    "pr_auc": 0.41701648578636613,
+    "threshold": 0.7536180904522614,
     "confusion_matrix": {
-      "tn": 19877,
-      "fp": 1030,
-      "fn": 746,
-      "tp": 755
+      "tn": 19711,
+      "fp": 1196,
+      "fn": 702,
+      "tp": 799
     },
-    "true_positive_rate": 0.502998001332445,
-    "false_positive_rate": 0.049265796144831876,
+    "true_positive_rate": 0.5323117921385743,
+    "false_positive_rate": 0.05720572057205721,
     "n_samples": 22408
   },
   "final_test": {
-    "accuracy": 0.9165067606765139,
-    "precision": 0.39767054908485855,
-    "recall": 0.4773635153129161,
-    "f1": 0.43388804841149775,
-    "roc_auc": 0.8649084745792938,
-    "pr_auc": 0.39414657681972687,
-    "threshold": 0.7142211055276382,
+    "accuracy": 0.9119996430005801,
+    "precision": 0.3833167825223436,
+    "recall": 0.5139813581890812,
+    "f1": 0.4391353811149033,
+    "roc_auc": 0.8677061346498224,
+    "pr_auc": 0.4010144186289799,
+    "threshold": 0.7536180904522614,
     "confusion_matrix": {
-      "tn": 19821,
-      "fp": 1086,
-      "fn": 785,
-      "tp": 717
+      "tn": 19665,
+      "fp": 1242,
+      "fn": 730,
+      "tp": 772
     },
-    "true_positive_rate": 0.4773635153129161,
-    "false_positive_rate": 0.05194432486726933,
+    "true_positive_rate": 0.5139813581890812,
+    "false_positive_rate": 0.0594059405940594,
     "n_samples": 22409
   },
   "tuned_risk_thresholds": [
@@ -189,128 +189,47 @@
     0.55,
     0.9
   ],
-  "validation_threshold": 0.7142211055276382,
+  "validation_threshold": 0.7536180904522614,
   "improvement_over_baseline": {
     "f1": {
       "baseline": 0.44771890053839614,
-      "final": 0.43388804841149775,
-      "pp_change": -0.013830852126898385,
-      "relative_change_pct": -3.089182098469899
+      "final": 0.4391353811149033,
+      "pp_change": -0.008583519423492836,
+      "relative_change_pct": -1.9171670914877352
     },
     "roc_auc": {
       "baseline": 0.8580900626922177,
-      "final": 0.8649084745792938,
-      "pp_change": 0.0068184118870761035,
-      "relative_change_pct": 0.794603292069792
+      "final": 0.8677061346498224,
+      "pp_change": 0.009616071957604722,
+      "relative_change_pct": 1.1206366762289197
     },
     "pr_auc": {
       "baseline": 0.36933460393526085,
-      "final": 0.39414657681972687,
-      "pp_change": 0.024811972884466016,
-      "relative_change_pct": 6.718020088043309
+      "final": 0.4010144186289799,
+      "pp_change": 0.031679814693719055,
+      "relative_change_pct": 8.577537646397216
     },
     "recall": {
       "baseline": 0.5263157894736842,
-      "final": 0.4773635153129161,
-      "pp_change": -0.04895227416076808,
-      "relative_change_pct": -9.300932090545937
+      "final": 0.5139813581890812,
+      "pp_change": -0.012334431284602987,
+      "relative_change_pct": -2.3435419440745675
     },
     "precision": {
       "baseline": 0.3895463510848126,
-      "final": 0.39767054908485855,
-      "pp_change": 0.008124198000045935,
-      "relative_change_pct": 2.085553613176349
+      "final": 0.3833167825223436,
+      "pp_change": -0.0062295685624690345,
+      "relative_change_pct": -1.5991854486945827
     },
     "accuracy": {
       "baseline": 0.913022134951803,
-      "final": 0.9165067606765139,
-      "pp_change": 0.003484625724710977,
-      "relative_change_pct": 0.38165840578387783
+      "final": 0.9119996430005801,
+      "pp_change": -0.001022491951222837,
+      "relative_change_pct": -0.11198983158024015
     }
   },
-  "shap_summary": {
-    "top_features": [
-      {
-        "feature": "RevolvingUtilizationOfUnsecuredLines",
-        "mean_abs_shap": 0.627474844455719
-      },
-      {
-        "feature": "delinquency_weighted_index",
-        "mean_abs_shap": 0.4980637729167938
-      },
-      {
-        "feature": "age",
-        "mean_abs_shap": 0.2635457515716553
-      },
-      {
-        "feature": "credit_risk_score",
-        "mean_abs_shap": 0.2579515278339386
-      },
-      {
-        "feature": "total_delinquencies",
-        "mean_abs_shap": 0.2460022121667862
-      },
-      {
-        "feature": "NumberOfOpenCreditLinesAndLoans",
-        "mean_abs_shap": 0.16972409188747406
-      },
-      {
-        "feature": "DebtRatio",
-        "mean_abs_shap": 0.15841038525104523
-      },
-      {
-        "feature": "income_per_dependent",
-        "mean_abs_shap": 0.1332247257232666
-      },
-      {
-        "feature": "MonthlyIncome",
-        "mean_abs_shap": 0.11219906061887741
-      },
-      {
-        "feature": "NumberRealEstateLoansOrLines",
-        "mean_abs_shap": 0.0980561301112175
-      }
-    ],
-    "sample_explanation": {
-      "expected_value": -0.31267833709716797,
-      "top_factors": [
-        {
-          "feature": "RevolvingUtilizationOfUnsecuredLines",
-          "value": 0.01030976,
-          "shap_value": -0.5576346516609192,
-          "direction": "reduces_risk"
-        },
-        {
-          "feature": "delinquency_weighted_index",
-          "value": 0.0,
-          "shap_value": -0.45109307765960693,
-          "direction": "reduces_risk"
-        },
-        {
-          "feature": "credit_risk_score",
-          "value": 0.02741222625,
-          "shap_value": -0.41558516025543213,
-          "direction": "reduces_risk"
-        },
-        {
-          "feature": "age",
-          "value": 32.0,
-          "shap_value": 0.3376341164112091,
-          "direction": "increases_risk"
-        },
-        {
-          "feature": "MonthlyIncome",
-          "value": 2800.0,
-          "shap_value": 0.2605215907096863,
-          "direction": "increases_risk"
-        }
-      ]
-    },
-    "n_background": 500
-  },
-  "shap_artifacts": [
-    "D:\\Agent projects\\Loan Repayment\\artifacts\\plots\\shap_global_importance.png"
-  ],
+  "shap_summary": {},
+  "shap_artifacts": [],
   "n_train": 104573,
   "n_val": 22408,
   "n_test": 22409

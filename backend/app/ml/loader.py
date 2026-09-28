@@ -55,17 +55,12 @@ class ModelService:
         try:
             from src.explainability.shap_explainer import ShapExplainer
 
-            model = (
-                self.pipeline.named_steps["model"]
-                if hasattr(self.pipeline, "named_steps")
-                else self.pipeline
-            )
+            model, _, names = self._tree_parts()
             # Background sample not needed for TreeExplainer; provide a dummy
             # frame with the right columns for Tree/Linear explainer health.
-            cols = self.raw_feature_names()
-            if self.feature_metadata:
-                cols = self.feature_metadata.get("raw_features", cols)
-            self.explainer = ShapExplainer.for_tree_model(model, pd.DataFrame(columns=cols))
+            self.explainer = ShapExplainer.for_tree_model(
+                model, pd.DataFrame(columns=names)
+            )
         except Exception as exc:  # noqa: BLE001
             logger.warning("SHAP explainer not initialised: %s", exc)
             self.explainer = None
@@ -74,6 +69,27 @@ class ModelService:
 
     def is_loaded(self) -> bool:
         return self.pipeline is not None
+
+    def _tree_parts(self):
+        """Unwrap to (fitted XGBClassifier, preprocessor, transformed names).
+
+        The serialized artifact is a RandomizedSearchCV whose best_estimator_
+        is Pipeline(preprocessor -> XGBClassifier). SHAP's TreeExplainer needs
+        the raw tree model applied to preprocessed features.
+        """
+        from src.models.preprocessing import feature_names_after_transform
+
+        pipe = self.pipeline
+        if hasattr(pipe, "best_estimator_"):
+            pipe = pipe.best_estimator_
+        preprocessor = pipe.named_steps["preprocessor"]
+        model = pipe.named_steps["model"]
+        return model, preprocessor, feature_names_after_transform()
+
+    def _transform_for_shap(self, features: pd.DataFrame) -> pd.DataFrame:
+        _, preprocessor, names = self._tree_parts()
+        arr = preprocessor.transform(features)
+        return pd.DataFrame(arr, columns=names, index=features.index)
 
     def raw_feature_names(self) -> list[str]:
         return self.feature_metadata.get("raw_features", RAW_FEATURES)
@@ -142,17 +158,14 @@ class ModelService:
         if self.explainer is None:
             raise ModelNotLoadedError("SHAP explainer unavailable.")
 
-        model = (
-            self.pipeline.named_steps["model"]
-            if hasattr(self.pipeline, "named_steps")
-            else self.pipeline
-        )
-        # Force a fresh explainer against a small background for correctness.
+        model, _, _ = self._tree_parts()
+        # Force a fresh explainer on preprocessed features for correctness.
         try:
             from src.explainability.shap_explainer import ShapExplainer
 
-            expl = ShapExplainer.for_tree_model(model, features)
-            local = expl.local_explanation(features, top_k=top_k)
+            Xt = self._transform_for_shap(features)
+            expl = ShapExplainer.for_tree_model(model, Xt)
+            local = expl.local_explanation(Xt, top_k=top_k)
         except Exception as exc:  # noqa: BLE001
             raise ModelNotLoadedError(f"SHAP local explanation failed: {exc}") from exc
 
