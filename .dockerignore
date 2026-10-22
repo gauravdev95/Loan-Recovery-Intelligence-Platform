@@ -12,3 +12,4 @@ data/raw
 data/processed
 .pytest_cache
 .claude
+!loan_recovery_local.db

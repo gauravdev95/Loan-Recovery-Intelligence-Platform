@@ -1,0 +1,46 @@
+{
+  "features_version": "v1",
+  "raw_features": [
+    "RevolvingUtilizationOfUnsecuredLines",
+    "age",
+    "NumberOfTime30-59DaysPastDueNotWorse",
+    "DebtRatio",
+    "MonthlyIncome",
+    "NumberOfOpenCreditLinesAndLoans",
+    "NumberOfTimes90DaysLate",
+    "NumberRealEstateLoansOrLines",
+    "NumberOfTime60-89DaysPastDueNotWorse",
+    "NumberOfDependents",
+    "total_delinquencies",
+    "worst_delinquency_tier",
+    "any_delinquency_flag",
+    "serious_delinquency_flag",
+    "multiple_delinquency_flag",
+    "delinquency_weighted_index",
+    "income_per_dependent",
+    "has_income_flag",
+    "utilization_stress_flag",
+    "financial_stress_indicator",
+    "credit_risk_score",
+    "age_bucket"
+  ],
+  "categorical_features": [
+    "age_bucket"
+  ],
+  "engineered_features": {
+    "total_delinquencies": "Sum of all 30-59, 60-89 and 90+ day past-due counts",
+    "worst_delinquency_tier": "Ordinal worst delinquency tier: 0=none,1=30-59,2=60-89,3=90+",
+    "any_delinquency_flag": "1 if any past-due event was reported",
+    "serious_delinquency_flag": "1 if any 90+ days past due (serious delinquency)",
+    "multiple_delinquency_flag": "1 if total past-due counts >= 2",
+    "delinquency_weighted_index": "Weighted severity index (weight 1/2/3 by tier)",
+    "income_per_dependent": "MonthlyIncome / (NumberOfDependents + 1)",
+    "has_income_flag": "1 if MonthlyIncome > 0 (else income likely missing)",
+    "age_bucket": "Fixed age band (Young/Prime/Middle/Senior)",
+    "utilization_stress_flag": "1 if revolving utilization >= 0.9 (near/over limit)",
+    "financial_stress_indicator": "1 if any delinquency and utilization >= 0.8",
+    "credit_risk_score": "Composite [,1] interpretable score from delinquency + utilization + debt"
+  },
+  "n_features": 22,
+  "target": "SeriousDlqin2yrs"
+}

@@ -1,0 +1,141 @@
+{
+  "model_name": "XGBoost [final]",
+  "model_version": "1.0.0",
+  "model_family": "XGBoost",
+  "features_version": "v1",
+  "feature_list": [
+    "RevolvingUtilizationOfUnsecuredLines",
+    "age",
+    "NumberOfTime30-59DaysPastDueNotWorse",
+    "DebtRatio",
+    "MonthlyIncome",
+    "NumberOfOpenCreditLinesAndLoans",
+    "NumberOfTimes90DaysLate",
+    "NumberRealEstateLoansOrLines",
+    "NumberOfTime60-89DaysPastDueNotWorse",
+    "NumberOfDependents",
+    "total_delinquencies",
+    "worst_delinquency_tier",
+    "any_delinquency_flag",
+    "serious_delinquency_flag",
+    "multiple_delinquency_flag",
+    "delinquency_weighted_index",
+    "income_per_dependent",
+    "has_income_flag",
+    "utilization_stress_flag",
+    "financial_stress_indicator",
+    "credit_risk_score",
+    "age_bucket"
+  ],
+  "target": "SeriousDlqin2yrs",
+  "training_timestamp": "2026-09-27T23:35:58.941142+00:00",
+  "metrics": {
+    "accuracy": 0.9119996430005801,
+    "precision": 0.3833167825223436,
+    "recall": 0.5139813581890812,
+    "f1": 0.4391353811149033,
+    "roc_auc": 0.8677061346498224,
+    "pr_auc": 0.4010144186289799,
+    "threshold": 0.7536180904522614,
+    "confusion_matrix": {
+      "tn": 19665,
+      "fp": 1242,
+      "fn": 730,
+      "tp": 772
+    },
+    "true_positive_rate": 0.5139813581890812,
+    "false_positive_rate": 0.0594059405940594,
+    "n_samples": 22409
+  },
+  "baseline_metrics": {
+    "accuracy": 0.913022134951803,
+    "precision": 0.3895463510848126,
+    "recall": 0.5263157894736842,
+    "f1": 0.44771890053839614,
+    "roc_auc": 0.8580900626922177,
+    "pr_auc": 0.36933460393526085,
+    "threshold": 0.768391959798995,
+    "confusion_matrix": {
+      "tn": 19669,
+      "fp": 1238,
+      "fn": 711,
+      "tp": 790
+    },
+    "true_positive_rate": 0.5263157894736842,
+    "false_positive_rate": 0.0592146171138853,
+    "n_samples": 22408
+  },
+  "threshold_configuration": {
+    "risk_level_thresholds": [
+      0.2,
+      0.55,
+      0.9
+    ],
+    "default_thresholds": [
+      0.3,
+      0.6,
+      0.8
+    ],
+    "decision_threshold_notes": "Risk-band thresholds tuned on the validation split."
+  },
+  "tuned_parameters": {
+    "subsample": 0.8,
+    "scale_pos_weight": 13.926206109049387,
+    "reg_lambda": 0.1,
+    "reg_alpha": 0.0,
+    "n_estimators": 200,
+    "min_child_weight": 5,
+    "max_depth": 4,
+    "learning_rate": 0.02,
+    "colsample_bytree": 0.9
+  },
+  "class_weights": {
+    "weighting": "scale_pos_weight/class_weight balanced",
+    "smote_applied": false
+  },
+  "imbalance_strategy": "class_weighting",
+  "preprocessing_version": "v1",
+  "class_distribution": {
+    "neg": 97567,
+    "pos": 7006,
+    "pos_rate": 0.067
+  },
+  "data_splits": {
+    "train_rows": 104573,
+    "test_rows": 22409
+  },
+  "selection_metric": "F1 (minority/default class)",
+  "candidates_evaluated": {
+    "untuned[Random Forest]": {
+      "f1": 0.4533832241970689,
+      "pr_auc": 0.399651087644039
+    },
+    "untuned[XGBoost]": {
+      "f1": 0.4570532915360502,
+      "pr_auc": 0.41460779701739786
+    },
+    "untuned[LightGBM]": {
+      "f1": 0.45591517857142855,
+      "pr_auc": 0.41378913154636454
+    },
+    "untuned[Logistic Regression (baseline)]": {
+      "f1": 0.44771890053839614,
+      "pr_auc": 0.36933460393526085
+    },
+    "tuned[XGBoost]": {
+      "f1": 0.4570938215102975,
+      "pr_auc": 0.41701648578636613
+    },
+    "tuned[LightGBM]": {
+      "f1": 0.4562289562289562,
+      "pr_auc": 0.41787075370902077
+    },
+    "smote[XGBoost]": {
+      "f1": 0.45193729665779353,
+      "pr_auc": 0.39884416078709495
+    }
+  },
+  "final_candidate": "tuned[XGBoost]",
+  "validation_threshold": 0.7536180904522614,
+  "shap": {}
+}
